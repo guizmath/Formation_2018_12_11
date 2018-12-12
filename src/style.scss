@@ -1,0 +1,9 @@
+$clockColor: cadetblue;
+$primary: $clockColor;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+#clock {
+  font-size: 2rem;
+  color: $clockColor;
+}

@@ -2,6 +2,9 @@ import $ from "jquery";
 import "bootstrap";
 import { Clock } from "./clock";
 
+// C'est cet import qui lance l'ajout de la balise <style type="text/css">
+import css from "./style.scss";
+
 var $mainBtn = $("#main-btn");
 
 $mainBtn.tooltip({
