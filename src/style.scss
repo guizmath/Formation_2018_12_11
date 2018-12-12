@@ -1,5 +1,7 @@
-$clockColor: cadetblue;
-$primary: $clockColor;
+$clockColor: white;
+$primary: lime;
+$light: rgb(44, 157, 255);
+$grid-columns: 4;
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
