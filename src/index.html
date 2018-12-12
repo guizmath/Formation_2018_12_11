@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>My webSite</title>
 </head>
 
-<body class="bg-dark" style="display: grid; grid-template-rows: 50px min-content 1fr 50px">
+<body class="bg-dark" style="display: grid; grid-template-rows: 50px min-content 1fr 50px; height: 100vh">
 
   <!-- NAVBAR MENU -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -31,8 +31,8 @@
       <ul class="navbar-nav">
 
         <li class="nav-item">
-            <a class="nav-link" href="" data-toggle="modal" data-target="#modal">Contact</a>
-          </li>
+          <a class="nav-link" href="" data-toggle="modal" data-target="#modal">Contact</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -50,23 +50,28 @@
 
   <!-- 3 COLUMNS (1/3 - 1/3 - 1/3) -->
   <div class="container-fluid">
-    <div class="row p-1">
+    <div class="row p-1 h-100">
       <div class="col-sm text-center border rounded m-1 bg-light">
-          <strong>One of three columns</strong><br>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ullam sint nesciunt harum. Tenetur sunt qui sequi. Quo voluptates quisquam doloremque numquam quis cupiditate earum vero esse, est dolor quos!
+        <strong>One of three columns</strong><br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ullam sint nesciunt harum. Tenetur sunt qui
+        sequi. Quo voluptates quisquam doloremque numquam quis cupiditate earum vero esse, est dolor quos!
         <br>
         <a href="http://www.qwant.com">Qwant</a>
       </div>
       <div class="col-sm text-center border rounded m-1 bg-light">
         <strong>One of three columns</strong>
         <br>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem quos aliquam id officiis officia omnis expedita beatae culpa sequi laudantium veniam dignissimos, in sapiente molestiae neque consectetur nostrum nisi ad?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem quos aliquam id officiis officia omnis
+        expedita beatae culpa sequi laudantium veniam dignissimos, in sapiente molestiae neque consectetur nostrum nisi
+        ad?
         <br>
         <a href="http://www.google.com">Google</a>
       </div>
       <div class="col-sm text-center border rounded m-1 bg-light">
-          <strong>One of three columns</strong><br>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo perferendis, incidunt commodi esse exercitationem harum perspiciatis sequi debitis, suscipit, ad ullam rerum numquam aperiam nulla est adipisci at mollitia consequatur.
+        <strong>One of three columns</strong><br>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo perferendis, incidunt commodi esse
+        exercitationem harum perspiciatis sequi debitis, suscipit, ad ullam rerum numquam aperiam nulla est adipisci at
+        mollitia consequatur.
       </div>
     </div>
   </div>
@@ -86,39 +91,29 @@
 
 
 
-  </div>
+    </div>
   </div>
 
   <div class="modal" tabindex="-1" role="dialog" id="modal">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p>Modal body text goes here.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Save changes</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          </div>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
+  </div>
 
-  <script src="node_modules/jquery/dist/jquery.js"></script>
-  <script src="node_modules/popper.js/dist/umd/popper.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
-
-  <script>
-    var mainBtn = document.querySelector('#main-btn');
-    mainBtn.addEventListener('mouseover', () => {
-      console.log('hovered !');
-    })
-  </script>
 </body>
 
 </html>
