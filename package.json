@@ -1,55 +1,57 @@
 {
-  "dependencies": {
-    "bootstrap": "^4.1.3",
-    "date-fns": "^2.0.0-alpha.26",
-    "jquery": "^3.3.1",
-    "moment": "^2.22.2",
-    "popper.js": "^1.14.6"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.2.0",
-    "@babel/preset-env": "^7.2.0",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-loader": "^8.0.4",
-    "css-loader": "^2.0.0",
-    "eslint": "^5.10.0",
-    "eslint-config-recommended": "^4.0.0",
-    "html-webpack-plugin": "^3.2.0",
-    "husky": "^1.2.0",
-    "jest": "^23.6.0",
-    "lint-staged": "^8.1.0",
-    "live-server": "^1.2.1",
-    "mini-css-extract-plugin": "^0.5.0",
-    "node-sass": "^4.11.0",
-    "prettier": "^1.15.3",
-    "rimraf": "^2.6.2",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "stylelint": "^9.9.0",
-    "stylelint-config-recommended": "^2.1.0",
-    "typescript": "^3.2.2",
-    "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10"
-  },
-  "scripts": {
-    "clean:dist": "rimraf dist",
-    "serve:dev": "webpack-dev-server --mode development",
-    "serve:prod": "webpack-dev-server --mode production",
-    "build:dev": "npm run clean:dist && webpack --mode development",
-    "build:prod": "npm run clean:dist && webpack --mode production",
-    "format": "prettier **/*.{html,js,ts,css,scss,json} --write"
-  },
-  "husky": {
-    "hooks": {
-      "post-checkout": "npm install",
-      "pre-commit": "lint-staged"
+    "dependencies": {
+        "bootstrap": "^4.1.3",
+        "date-fns": "^2.0.0-alpha.26",
+        "jquery": "^3.3.1",
+        "moment": "^2.22.2",
+        "popper.js": "^1.14.6"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/preset-env": "^7.2.0",
+        "awesome-typescript-loader": "^5.2.1",
+        "babel-loader": "^8.0.4",
+        "css-loader": "^2.0.0",
+        "eslint": "^5.10.0",
+        "eslint-config-recommended": "^4.0.0",
+        "html-webpack-plugin": "^3.2.0",
+        "htmllint": "^0.7.2",
+        "husky": "^1.2.0",
+        "jest": "^23.6.0",
+        "lint-staged": "^8.1.0",
+        "live-server": "^1.2.1",
+        "mini-css-extract-plugin": "^0.5.0",
+        "node-sass": "^4.11.0",
+        "prettier": "^1.15.3",
+        "rimraf": "^2.6.2",
+        "sass-loader": "^7.1.0",
+        "style-loader": "^0.23.1",
+        "stylelint": "^9.9.0",
+        "stylelint-config-recommended": "^2.1.0",
+        "tslint": "^5.11.0",
+        "typescript": "^3.2.2",
+        "webpack": "^4.27.1",
+        "webpack-cli": "^3.1.2",
+        "webpack-dev-server": "^3.1.10"
+    },
+    "scripts": {
+        "clean:dist": "rimraf dist",
+        "serve:dev": "webpack-dev-server --mode development",
+        "serve:prod": "webpack-dev-server --mode production",
+        "build:dev": "npm run clean:dist && webpack --mode development",
+        "build:prod": "npm run clean:dist && webpack --mode production",
+        "format": "prettier **/*.{html,js,ts,css,scss,json} --write"
+    },
+    "husky": {
+        "hooks": {
+            "post-checkout": "npm install",
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{html,js,ts,css,scss,json}": [
+            "prettier --write",
+            "git add"
+        ]
     }
-  },
-  "lint-staged": {
-    "*.{html,js,ts,css,scss,json}": [
-      "prettier --write",
-      "git add"
-    ]
-  }
 }
