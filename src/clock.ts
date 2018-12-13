@@ -1,6 +1,14 @@
-import moment from 'moment'
+import { format } from 'date-fns'
+
+export interface IClockOptions {
+    container?: Element | null
+    format?: string
+}
 
 export class Clock {
+    private container: Element
+    private format: string
+
     /**
      * Classe horloge.
      *
@@ -8,7 +16,7 @@ export class Clock {
      * @param {Element} options.container l'élément dans lequel sera insérée l'horloge
      * @param {string} options.format le format d'affichage de l'horloge
      */
-    constructor(options = {}) {
+    constructor(options: IClockOptions = {}) {
         this.container = options.container || document.body
         this.format = options.format || 'HH:mm:ss'
     }
@@ -22,6 +30,6 @@ export class Clock {
 
     update() {
         const now = new Date()
-        this.container.innerHTML = moment(now).format(this.format)
+        this.container.innerHTML = format(now, this.format)
     }
 }

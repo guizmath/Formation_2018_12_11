@@ -6,7 +6,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = function(_, { mode }) {
     return {
         devtool: mode === 'development' ? 'source-map' : false,
-        entry: './src/index.js',
+        resolve: {
+            extensions: ['.ts', '.js'],
+        },
+        entry: './src/index.ts',
         output: {
             filename:
                 mode === 'production' ? 'app.[chunkHash].min.js' : 'app.js',
@@ -30,6 +33,12 @@ module.exports = function(_, { mode }) {
         ],
         module: {
             rules: [
+                {
+                    test: /\.ts$/,
+                    use: {
+                        loader: 'awesome-typescript-loader',
+                    },
+                },
                 {
                     test: /\.m?js$/,
                     exclude: /(node_modules|bower_components)/,
