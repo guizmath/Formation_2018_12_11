@@ -12,9 +12,12 @@ $mainBtn.tooltip({
     placement: 'right',
 })
 
-const clockElt = document.querySelector('#clock')
-const clock = new Clock({
-    container: clockElt,
+document.addEventListener('click', () => {
+    import('./clock').then(({ Clock }) => {
+        const clockElt = document.querySelector('#clock')
+        const clock = new Clock({
+            container: clockElt,
+        })
+        clock.start()
+    })
 })
-
-clock.start()
