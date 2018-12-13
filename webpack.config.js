@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 // npm i webpack-dev-server babel-loader @babel/core @babel/preset-env -D
 
@@ -13,6 +14,18 @@ module.exports = function(_, { mode }) {
         plugins: [
             new HtmlWebpackPlugin({
                 template: './src/index.html',
+            }),
+            new MiniCssExtractPlugin({
+                // Options similar to the same options in webpackOptions.output
+                // both options are optional
+                filename:
+                    mode === 'development'
+                        ? '[name].css'
+                        : '[name].[chunkHash].css',
+                chunkFilename:
+                    mode === 'development'
+                        ? '[id].css'
+                        : '[id].[chunkHash].css',
             }),
         ],
         module: {
@@ -29,7 +42,13 @@ module.exports = function(_, { mode }) {
                 },
                 {
                     test: /\.scss$/,
-                    use: ['style-loader', 'css-loader', 'sass-loader'],
+                    use: [
+                        mode === 'development'
+                            ? 'style-loader'
+                            : MiniCssExtractPlugin.loader,
+                        'css-loader',
+                        'sass-loader',
+                    ],
                 },
             ],
         },
